@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import urllib.request
 import webbrowser
 from datetime import date
@@ -66,7 +68,6 @@ def store_link(src, start, end):
 		
 def open_website():
 	select_web = input("ต้องการเข้าเว็บไซต์ ? กรุณาเลือก (1 - 26) : ")
-
 	if select_web.isnumeric():
 		select_web = int(select_web)
 		if (1 <= select_web <= 26):
