@@ -22,6 +22,15 @@ public class JScapped {
 		}
 	}
 	
+	public URL getURL() {
+		return url;
+	}
+	
+	/**
+	 *  return source code from your website.
+	 *  
+	 *  @return string, if can access
+	 */
 	public String getText() {
 		StringBuilder out = new StringBuilder();
 		try {
@@ -37,12 +46,6 @@ public class JScapped {
 		return out.toString();
 	}
 	
-	public void ensureURL() {
-		if (url == null) {
-
-		}
-	}
-	
 	public void toHTML(String outPath) {
 		String src = getText();
 		if (src != null) {
@@ -55,34 +58,6 @@ public class JScapped {
 			}
 		}
 	}
-
-	
-	public static Object[] getData(String src) {
-		String[] pattern = {"udblock__permalink", ">", "<"};
-
-		List<String> newsList = new ArrayList<>();
-		int start = 0;
-		int end = 0;
-		while (true) {
-			int find = src.indexOf(pattern[0], end);
-			if (find >= 0) {
-				find = src.indexOf(pattern[1], find);
-				start = find + 1;
-				if (find >= 0) {
-					find = src.indexOf(pattern[2], find);
-					if (find >= 0) {
-						end = find;
-						newsList.add(src.substring(start, end));
-					}
-				}
-			} else {
-				break;
-			}
-		}
-		
-		return newsList.toArray();
-	}
-
 
 //	public static void main(String[] args) {
 //		long startTime = System.currentTimeMillis();
