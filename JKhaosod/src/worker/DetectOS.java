@@ -1,3 +1,4 @@
+package worker;
 
 public class DetectOS {
 	private static String os = System.getProperty("os.name").toLowerCase();

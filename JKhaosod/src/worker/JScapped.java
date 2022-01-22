@@ -1,3 +1,5 @@
+package worker;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -43,7 +45,7 @@ public class JScapped {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return out.toString();
+		return new String(out);
 	}
 	
 	public void toHTML(String outPath) {
@@ -62,7 +64,7 @@ public class JScapped {
 //	public static void main(String[] args) {
 //		long startTime = System.currentTimeMillis();
 //		
-//		JScapped webscape = new JScapped("https://www.khaosod.co.th/breaking-news");
+//		worker.JScapped webscape = new worker.JScapped("https://www.khaosod.co.th/breaking-news");
 //		String text = webscape.getText();
 //		
 //		Object[] news = getData(text);
